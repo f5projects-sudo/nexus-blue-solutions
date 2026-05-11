@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-info">
             <div className="footer-logo">
-              <Shield className="logo-icon" size={32} />
+              <div className="nexus-logo-icon">N</div>
               <span>Nexus Blue Solutions</span>
             </div>
             <p className="footer-desc">

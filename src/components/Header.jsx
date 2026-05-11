@@ -6,7 +6,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <Shield className="logo-icon" size={32} />
+          <div className="nexus-logo-icon">N</div>
           <span>Nexus Blue</span>
         </div>
         <nav className="nav-links">

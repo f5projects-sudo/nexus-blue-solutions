@@ -799,3 +799,20 @@ main {
     font-size: 2.5rem;
   }
 }
+/* New Logo Icon */
+.nexus-logo-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #1D5393;
+  border: 2px solid #38bdf8;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
