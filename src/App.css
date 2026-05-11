@@ -662,3 +662,140 @@ main {
   font-family: 'Times New Roman', Times, serif;
   line-height: 1;
 }
+/* Why Us Section Styles */
+.why-us-wrapper {
+  background-color: #061224;
+  padding: 100px 0;
+  color: white;
+}
+
+.wu-header {
+  margin-bottom: 64px;
+}
+
+.wu-tagline {
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.wu-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.wu-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.wu-features-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.wu-feature {
+  display: flex;
+  gap: 24px;
+}
+
+.wu-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #1D5393;
+  border: 2px solid #38bdf8;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.wu-feature-title {
+  color: #38bdf8;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.wu-feature-desc {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.wu-metrics-box {
+  background-color: #0B2144;
+  border: 1px solid #1C4173;
+  padding: 48px;
+  border-radius: 4px;
+}
+
+.wu-metrics-title {
+  color: #38bdf8;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.wu-metric-item {
+  margin-bottom: 40px;
+}
+
+.wu-metric-item:last-child {
+  margin-bottom: 0;
+}
+
+.wu-metric-number {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.wu-metric-label {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.wu-progress-bg {
+  width: 100%;
+  height: 16px;
+  background-color: #030812;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.wu-progress-fill {
+  height: 100%;
+  background-color: #3b82f6; /* Bright blue progress */
+}
+
+.wu-accreditation {
+  color: #64748b;
+  font-size: 0.85rem;
+  text-align: right;
+  margin-top: 16px;
+}
+
+@media (max-width: 992px) {
+  .wu-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .wu-title {
+    font-size: 2.5rem;
+  }
+}
