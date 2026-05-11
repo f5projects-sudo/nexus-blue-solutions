@@ -495,3 +495,157 @@ main {
     display: none; /* In a real app, we'd add a hamburger menu */
   }
 }
+/* Service 02 Styles */
+.s2-top-row {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.s2-desc-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.s2-stat-box-container {
+  width: 320px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.s2-stat-box {
+  background-color: #16437E;
+  border: 1px solid #38bdf8;
+  padding: 40px 24px;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.s2-stat-number {
+  color: #38bdf8;
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.s2-stat-text {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.s2-stat-notch {
+  position: absolute;
+  bottom: -24px;
+  width: 48px;
+  height: 48px;
+  background-color: #16437E;
+  border: 1px solid #38bdf8;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.s2-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.s2-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.s2-circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 24px;
+}
+
+.s2-line-left, .s2-line-right {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  height: 2px;
+  background-color: #1D5393;
+  z-index: 1;
+}
+
+.s2-line-left { left: 0; }
+.s2-line-right { right: 0; }
+.s2-line-invisible { background-color: transparent !important; }
+
+.s2-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #38bdf8;
+  background-color: #1D5393;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  z-index: 2;
+  position: relative;
+}
+
+.s2-circle-placeholder {
+  width: 60px;
+  height: 60px;
+}
+
+.s2-card {
+  background-color: transparent;
+  border: 1px solid #1C4173;
+  padding: 32px 24px;
+  flex: 1;
+  background: linear-gradient(180deg, rgba(28,65,115,0.2) 0%, rgba(28,65,115,0.05) 100%);
+}
+
+.s2-feature-title {
+  color: #38bdf8;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.s2-feature-desc {
+  color: #e2e8f0;
+  text-align: center;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .s2-top-row {
+    flex-direction: column;
+  }
+  .s2-stat-box-container {
+    width: 100%;
+  }
+  .s2-bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .s2-circle-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .s2-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,5 +1,53 @@
 import React from 'react';
 
+const ServiceBlock2 = ({ number, title, description, features, highlight }) => (
+  <div className="service-block">
+    <div className="service-header-bar">
+      <div className="container">
+        <span className="service-tagline">S E R V I C E &nbsp;&nbsp; 0 {number}</span>
+        <h2 className="service-block-title">{title}</h2>
+      </div>
+    </div>
+    <div className="service-content-area">
+      <div className="container">
+        <div className="s2-top-row">
+          <div className="s2-desc-box">
+            <p>{description}</p>
+          </div>
+          <div className="s2-stat-box-container">
+            <div className="s2-stat-box">
+              <div className="s2-stat-number">{highlight.mainStat}</div>
+              <div className="s2-stat-text">{highlight.mainText}</div>
+            </div>
+            <div className="s2-stat-notch"></div>
+          </div>
+        </div>
+
+        <div className="s2-bottom-grid">
+          {features.map((f, idx) => (
+            <div className="s2-col" key={idx}>
+              <div className="s2-circle-container">
+                {idx > 0 && idx < 3 && <div className="s2-line-left"></div>}
+                {idx === 3 && <div className="s2-line-left s2-line-invisible"></div>}
+                {idx < 3 ? (
+                  <div className="s2-circle">{idx + 1}</div>
+                ) : (
+                  <div className="s2-circle-placeholder"></div>
+                )}
+                {idx < 2 && <div className="s2-line-right"></div>}
+              </div>
+              <div className="s2-card">
+                <h4 className="s2-feature-title" dangerouslySetInnerHTML={{ __html: f.title }}></h4>
+                <p className="s2-feature-desc">{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const ServiceBlock = ({ number, title, description, features, highlight }) => (
   <div className="service-block">
     <div className="service-header-bar">
@@ -66,17 +114,17 @@ const Services = () => {
       title: "Credit Repair",
       description: "Our specialists dispute inaccurate items, remove negative marks, and build a personalized roadmap to boost your credit score — often by 100+ points within months.",
       features: [
-        { title: "Full Report Analysis", desc: "Comprehensive review of all three bureaus" },
-        { title: "Official Dispute Filing", desc: "Legal challenges to inaccurate items" },
-        { title: "Score-Building Strategy", desc: "Personalized actionable steps" },
-        { title: "Progress Tracking", desc: "Transparent reporting dashboard" }
+        { title: "Full Report<br/>Analysis", desc: "We pull all 3 bureaus and identify every negative item" },
+        { title: "Dispute<br/>Filing", desc: "Official disputes sent for inaccurate or unverifiable items" },
+        { title: "Score-Building<br/>Strategy", desc: "Personalized plan to build positive credit history" },
+        { title: "Monthly<br/>Tracking", desc: "Progress reports every 30 days until your goal is reached" }
       ],
       highlight: {
-        title: "Highest Success Rate",
-        mainStat: "100+",
-        mainText: "Avg. score points gained",
-        subStat: "3-6 months",
-        subText: "Typical program duration"
+        title: "",
+        mainStat: "150+",
+        mainText: "Avg. credit score points gained",
+        subStat: "",
+        subText: ""
       }
     },
     {
@@ -101,9 +149,12 @@ const Services = () => {
 
   return (
     <section id="services" className="services-section-wrapper">
-      {servicesData.map((svc, idx) => (
-        <ServiceBlock key={idx} {...svc} />
-      ))}
+      {servicesData.map((svc, idx) => {
+        if (svc.number === "2") {
+          return <ServiceBlock2 key={idx} {...svc} />
+        }
+        return <ServiceBlock key={idx} {...svc} />
+      })}
     </section>
   );
 };
