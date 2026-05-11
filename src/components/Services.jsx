@@ -48,6 +48,52 @@ const ServiceBlock2 = ({ number, title, description, features, highlight }) => (
   </div>
 );
 
+const ServiceBlock3 = ({ number, title, description, features, highlight }) => (
+  <div className="service-block">
+    <div className="service-header-bar">
+      <div className="container">
+        <span className="service-tagline">S E R V I C E &nbsp;&nbsp; 0 {number}</span>
+        <h2 className="service-block-title">{title}</h2>
+      </div>
+    </div>
+    <div className="service-content-area">
+      <div className="container service-content-grid">
+        <div className="service-left-col">
+          <p className="service-main-desc">{description}</p>
+          <div className="service-features-grid">
+            {features.map((f, idx) => (
+              <div className="service-feature-card s3-feature-card" key={idx}>
+                <h4 className="feature-title">{f.title}</h4>
+                <p className="feature-desc">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="service-right-col">
+          <div className="service-highlight-box">
+            <h3 className="highlight-title">{highlight.title}</h3>
+            <div className="highlight-divider"></div>
+            <div className="highlight-stat-main">
+              <span className="s3-stat-number">{highlight.stats[0].number}</span>
+              <span className="stat-text">{highlight.stats[0].text}</span>
+            </div>
+            <div className="highlight-divider"></div>
+            <div className="highlight-stat-main">
+              <span className="s3-stat-number">{highlight.stats[1].number}</span>
+              <span className="stat-text">{highlight.stats[1].text}</span>
+            </div>
+            <div className="highlight-divider"></div>
+            <div className="highlight-stat-main">
+              <span className="s3-stat-number">{highlight.stats[2].number}</span>
+              <span className="stat-text">{highlight.stats[2].text}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const ServiceBlock = ({ number, title, description, features, highlight }) => (
   <div className="service-block">
     <div className="service-header-bar">
@@ -129,20 +175,21 @@ const Services = () => {
     },
     {
       number: "3",
-      title: "Lending Portfolio",
+      title: "Lending Portfolio Management",
       description: "For lenders and investors — we analyze, optimize, and actively manage lending portfolios to maximize returns, minimize defaults, and ensure regulatory compliance.",
       features: [
-        { title: "Risk Assessment", desc: "Deep evaluation of borrower profiles" },
-        { title: "Delinquency Reduction", desc: "Proactive collection strategies" },
-        { title: "Yield Optimization", desc: "Maximizing return on capital" },
-        { title: "Compliance & Reporting", desc: "Full regulatory adherence" }
+        { title: "Portfolio Risk Assessment", desc: "Deep-dive analysis of credit exposure, concentration risk, and default probability across your entire book." },
+        { title: "Delinquency Reduction", desc: "Data-driven strategies to proactively identify and manage at-risk borrowers before defaults occur." },
+        { title: "Yield Optimization", desc: "Restructuring and pricing recommendations to improve risk-adjusted returns across the portfolio." },
+        { title: "Compliance & Reporting", desc: "Full regulatory reporting support — CFPB, FDIC, Basel compliance frameworks handled for you." }
       ],
       highlight: {
-        title: "Institutional Grade",
-        mainStat: "$500M+",
-        mainText: "Assets under management",
-        subStat: "99.8%",
-        subText: "Compliance rating"
+        title: "For Institutions",
+        stats: [
+          { number: "$1.8B", text: "Portfolios under management" },
+          { number: "97%", text: "Client retention rate" },
+          { number: "300+", text: "Institutional partners" }
+        ]
       }
     }
   ];
@@ -152,6 +199,9 @@ const Services = () => {
       {servicesData.map((svc, idx) => {
         if (svc.number === "2") {
           return <ServiceBlock2 key={idx} {...svc} />
+        }
+        if (svc.number === "3") {
+          return <ServiceBlock3 key={idx} {...svc} />
         }
         return <ServiceBlock key={idx} {...svc} />
       })}

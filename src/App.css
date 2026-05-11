@@ -649,3 +649,16 @@ main {
     grid-template-columns: 1fr;
   }
 }
+/* Service 03 Styles */
+.s3-feature-card {
+  border-left: none;
+  border-top: 4px solid #38bdf8;
+  padding-top: 32px;
+}
+.s3-stat-number {
+  color: #ffffff;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1;
+}
