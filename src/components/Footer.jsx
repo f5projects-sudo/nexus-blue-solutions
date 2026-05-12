@@ -1,9 +1,9 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Shield } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="footer">
+    <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">
@@ -12,25 +12,8 @@ const Footer = () => {
               <span>Nexus Blue Solutions</span>
             </div>
             <p className="footer-desc">
-              Book a free 30-minute consultation with one of our specialists. No obligation, no pressure — just clarity and a clear path forward.
+              Empowering clients nationwide with expert debt management, credit repair, and lending portfolio solutions.
             </p>
-            <div className="contact-item">
-              <Phone className="contact-icon" size={20} />
-              <span>(305) 555-0100</span>
-            </div>
-            <div className="contact-item">
-              <Mail className="contact-icon" size={20} />
-              <span>hello@nexusbluesolutions.com</span>
-            </div>
-            <div className="contact-item">
-              <MapPin className="contact-icon" size={20} />
-              <span>Des Moines, Iowa | Serving clients nationwide</span>
-            </div>
-            <div style={{ marginTop: '24px' }}>
-              <button className="btn btn-primary" style={{ backgroundColor: '#0070F3' }}>
-                Book Your Free Consultation
-              </button>
-            </div>
           </div>
 
           <div className="footer-links-group">
