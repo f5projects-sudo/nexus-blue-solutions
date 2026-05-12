@@ -1153,3 +1153,16 @@ main {
     gap: 16px;
   }
 }
+
+.contact-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.contact-form-error {
+  color: #f87171;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0;
+}

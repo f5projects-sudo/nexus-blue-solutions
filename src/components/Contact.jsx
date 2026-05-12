@@ -10,14 +10,29 @@ const Contact = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+    try {
+      await fetch('https://n8n.automationf5networking.com/webhook/3e4dc54e-af2d-495e-9173-cea7691dd464', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again or contact us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -154,10 +169,11 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit" className="contact-submit-btn">
-                  <span>Send My Request</span>
-                  <Send size={18} />
+                <button type="submit" className="contact-submit-btn" disabled={loading}>
+                  <span>{loading ? 'Sending...' : 'Send My Request'}</span>
+                  {!loading && <Send size={18} />}
                 </button>
+                {error && <p className="contact-form-error">{error}</p>}
               </form>
             )}
           </div>
