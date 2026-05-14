@@ -67,7 +67,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="contact-info-label">Email</div>
-                  <div className="contact-info-value">hello@nexusbluesolutions.com</div>
+                  <div className="contact-info-value">support@nexusbluesolutions.com</div>
                 </div>
               </div>
               <div className="contact-info-item">
